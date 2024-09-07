@@ -7,6 +7,7 @@ Using docker-compose, with the included docker-compose.yaml file, you can run Pi
 Much of the setup for this project is influenced by my [Pi-Hole Docker Synology NAS Setup Guide](https://youtu.be/1yG0p9gU104) and [Unbound Pi-Hole Synology Setup](https://youtu.be/-546g1w_L3w) videos, which I encourage you to view for details on how things are is setup. As an overview, the videos describe how to setup Pi-Hole and Unbound through the command line and from the Docker package from within DSM. This generally works great except, on reboot, Unbound may start up prior to Pi-Hole which causes the MacVLAN IP assignment to switch between the containers resulting in a problem with the setup.  The work around is to manually stop both containers, then restart the containers in the proper order or use a custom startup script to stop the containers and start them up again in the proper order (see the pinned comment from the second video listed above).  The setup configured in this project resolves this issue.
 
 ## Directions
+I would highly recommend using portainer to set this up as it would provide a GUI to monitor and manage the stacks
 
 You'll need to make sure the prerequisites are fulfilled on your Synology NAS first, then run through the setup steps below. I also run through setting everything up in this video here -> https://youtu.be/nOlx10aRZjk.
 
